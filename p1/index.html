@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <title>Project 1</title>
+    <meta charset='utf-8'>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js' defer></script>
+    <script src='script.js' defer></script>
+</head>
+<style>
+    [v-cloak]{
+        display:none
+    }
+</style>
+<body>
+    <h1>Shopping List</h1>
+<div id='app' v-cloak>
+    {{ item }}
+    {{ items }}
+    <label>Item <input type='text' v-model='item'></label>
+<button v-on:click='items.push(item)'>Add</button>
+<ul>
+    <li v-for='thisitem in items'>{{ thisitem }}</li>
+</ul>
+</div>
+</div>
+
+
+</body>
+</html>
