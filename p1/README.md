@@ -1,6 +1,6 @@
 # Project 1
 + By: Ashley Hirst
-+ Production URL: <http://e28p1.ashley877.me>
++ Production URL: <http://p1.ashley877.me>
 
 ## Outside resources
 *your list of outside resources go here*

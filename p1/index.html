@@ -7,9 +7,9 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     <form>
-        <button :img src=/images/rock.jpg v-on:click= "player = 'rock'; computer()">Rock </button>
-        <button :img src=/images/paper.jpg v-on:click= "player = 'paper'; computer()">Paper</button>
-        <button :img src=/images/scissors.jpg v-on:click= "player = 'scissors'; computer()">Scissors</button>
+        <button :img src="/images/rock.jpg" v-on:click= "player = 'rock'; computer()">Rock </button>
+        <button :img src="/images/paper.jpg" v-on:click= "player = 'paper'; computer()">Paper</button>
+        <button :img src="/images/scissors.jpg" v-on:click= "player = 'scissors'; computer()">Scissors</button>
     </form>
     <ul>
         <li v-for='userPick'>{{ player }}</li>
