@@ -1,8 +1,6 @@
-*Any instructions/notes in italics should be removed from the template before submitting* 
-
 # Project 1
-+ By: *your first and last name*
-+ Production URL: <http://e28p1.yourdomain.com>
++ By: Ashley Hirst
++ Production URL: <http://e28p1.ashley877.me>
 
 ## Outside resources
 *your list of outside resources go here*
