@@ -1,9 +1,11 @@
-# Project 1
+## Project 1
 + By: Ashley Hirst
-+ Production URL: <http://p1.ashley877.me>
++ By: Rock Paper Scissors
++ [Production URL:](http://p1.ashley877.me)
 
 ## Outside resources
-*your list of outside resources go here*
+[Icon images](https://www.vecteezy.com/vector-art/691500-rock-paper-scissors-vector-icons)
+[Choosing a random option from an array](https://www.minddevelopmentanddesign.com/blog/random-array-picker-with-vue-for-beginners/)
 
 ## Notes for instructor
-*any notes for me to refer to while grading; if none, omit this section*
+<p>None</p>

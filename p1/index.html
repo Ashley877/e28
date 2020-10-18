@@ -1,19 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Rock Paper Scissors (TEST)</title>
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <h1>Rock Paper Scissors</h1>
-    <form>
-        <button :img src="/images/rock.jpg" v-on:click= "player = 'rock'; computer()">Rock </button>
-        <button :img src="/images/paper.jpg" v-on:click= "player = 'paper'; computer()">Paper</button>
-        <button :img src="/images/scissors.jpg" v-on:click= "player = 'scissors'; computer()">Scissors</button>
-    </form>
-    <ul>
-        <li v-for='userPick'>{{ player }}</li>
-        <li v-for='computer pick'>{{ computer }}</li>
-    </ul>
-  </body>
+<!doctype html>
+<html lang='en'>
+
+    <head>
+        <title>ROCK PAPER SCISSORS</title>
+        <meta charset='utf-8'>
+        <link href=data:, rel=icon>
+        <link rel="stylesheet" href="style.css">
+        <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'
+                defer></script>
+        <script src='script.js'
+                defer></script>
+    </head>
+    <body>
+        <script type='text/x-template'
+                id='round-detail'>
+            <div v-bind:class="{ winner : winner == 'You'}">
+                <ul>
+                    <li>Round #: {{ number }}</li>
+                    <li>Winner: {{ winner }}</li>
+                    <li><slot name='choice'></slot></li>
+                    <li><slot name='computer'></slot></li>
+                </ul>
+                <button @click="$emit('delete-round', number)">Delete round</button>
+            </div>
+        </script>
+
+        <h1>ROCK PAPER SCISSORS</h1>
+
+        <div id='app'
+            v-cloak>
+            <div>
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/rock.png" id="1"/>
+                    </td>
+                    <td>
+    ]                   <img src="images/paper.png" id="2"/>
+                    </td>
+                    <td>
+                        <img src="images/scissors.png" id="3"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <input type="radio" 
+                        value="rock"
+                        v-model='choice'
+                        checked>
+                    </td>
+                    <td style="text-align: center;">
+                        <input type="radio" 
+                        value="paper"
+                        v-model='choice'
+                        checked>
+                    </td>
+                    <td style="text-align: center;">
+                        <input type="radio" 
+                        value="scissors"
+                        v-model='choice'
+                        checked>
+                    </td>
+                </tr>  
+            </table>
+            </div>
+        </br>
+            <button id='playBtn'
+                    @click='play'>Play!</button>    
+            <button id='reset'
+                    @click='reset'>Reset Game</button>
+
+            <div>
+                <span class="text">Your Score: </span><span class="text"> {{userScore}}</span>
+            </div>
+            <div>
+                <span class="text">Computer Score: </span><span class="text"> {{computerScore}}</span>
+            </div>
+            <round-detail v-for='round in rounds'
+                        @delete-round='deleteRound($event)'
+                        :number='round.number'
+                        :winner='round.winner'
+                        :key='round.number'>
+                <template #choice>You chose {{ round.choice }}</template>
+                <template #computer>The computer picked {{ round.computer }}</template>
+                <template #winner>The Winner is {{ round.winner }}</template>
+            </round-detail>
+        </div>
+    </body>
 </html>
