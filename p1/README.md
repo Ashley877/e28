@@ -1,6 +1,6 @@
 ## Project 1
 + By: Ashley Hirst
-+ By: Rock Paper Scissors
++ Rock Paper Scissors
 + Production URL:<http://p1.ashley877.me>
 
 ## Outside resources
