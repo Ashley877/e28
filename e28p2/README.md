@@ -1,26 +1,24 @@
-_Any instructions/notes in italics should be removed from the template before submitting_
+# e28p2
 
-# Project 2
+## Project setup
+```
+npm install
+```
 
-- By: Ashley Hirst
-- Production URL: <http://e28p2.ashley877.me/>
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-## Pages summary
+### Compiles and minifies for production
+```
+npm run build
+```
 
-_List the "pages" of your application_
+### Lints and fixes files
+```
+npm run lint
+```
 
-## SFC summary
-
-_List the SFCs of your application_
-
-## Server interaction
-
-_List the features in your application that are persisting and retrieving data from the server_
-
-## Outside resources
-
-_Your list of outside resources go here_
-
-## Notes for instructor
-
-_Any notes for me to refer to while grading; if none, omit this section_
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
