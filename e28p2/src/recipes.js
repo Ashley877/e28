@@ -2,19 +2,19 @@ export const recipes = [
     {
         id: 1,
         name: 'Driscoll’s Strawberries',
-	sku: 'driscolls-strawberries',
+        sku: 'driscolls-strawberries',
         description:
             'Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.',
         price: 4.99,
         available: 0,
         weight: 1,
         perishable: true,
-        categories: ['produce', 'fruits']
+        categories: ['produce', 'fruits'],
     },
     {
         id: 2,
         name: 'Nestle Toll House Cookie Dough',
-	sku: 'nestle-toll-house-cookie-dough',
+    sku: 'nestle-toll-house-cookie-dough',
         description:
             'Get the classic taste that America loves in a ready to bake dough. Full of our famous morsels, these cookies deliver the chocolate flavor you’ve come to expect from Nestle Toll House.',
         price: 7.49,

@@ -68,7 +68,7 @@ header {
 
 #logo {
   /* Actual width is 636; displaying at half-size for retina screens */
-  width: 318px;
+  width: 100%;
 }
 
 nav ul {
@@ -150,7 +150,7 @@ PAGE SPECIFIC
   padding: 10px;
 }
 
-#product-page {
+#recipe-page {
   img {
     width: 200px;
   }

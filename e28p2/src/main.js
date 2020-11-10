@@ -8,6 +8,7 @@ import FavoritesPage from '@/components/pages/FavoritesPage.vue';
 import ShoppingPage from '@/components/pages/ShoppingPage.vue';
 import CategoriesPage from '@/components/pages/CategoriesPage.vue';
 import RecipePage from '@/components/pages/RecipePage.vue';
+import RecipeCreatePage from '@/components/pages/RecipeCreatePage.vue';
 
 
 Vue.config.productionTip = false
@@ -22,9 +23,9 @@ const router=new VueRouter({
       { path:'/favorites', component: FavoritesPage },
       { path:'/shopping', component: ShoppingPage },
       { path:'/categories', component: CategoriesPage },
-      { path:'/recipes/:id', component: RecipePage, props: true },
-
-  ]
+      { path:'/recipes/new', component: RecipeCreatePage },
+      { path:'/recipes/:id', component: RecipePage, props: true },   
+  ],
 })
 new Vue({
   router,
