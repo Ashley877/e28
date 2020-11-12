@@ -2,20 +2,31 @@
     <div class="recipe">
         <div class="recipe-name">{{ recipe.name }}</div>
         <img class="recipe-thumb" v-bind:src="require('@/assets/images/recipes/' + recipe.id + '.jpg')" />
-
-        <p class="description" v-if="includeDetails">
-            {{ recipe.description }}
-        </p>
-        <p class="price" v-if="includeDetails">${{ recipe.price }}</p>
+    <div class="details" v-if="includeDetails">
+        <p class="ingredients">{{ recipe.ingredients }}</p>
+        <p class="directions">{{ recipe.directions }}</p>
+    </div>
     </div>
 </template>
 
 <script>
+//import { axios } from '@/app.js';
 export default {
     name: 'show-recipe',
     props: ['recipe', 'includeDetails'],
     data: function () {
         return {};
+    },
+    computed: {
+        imageSource() {
+            try {
+                return require('@/assets/images/recipes/' +
+                    this.recipe.id +
+                    '.jpg');
+            } catch (e) {
+                return require('@/assets/images/recipes/image-not-available.jpg');
+            }
+        },
     },
     
 };

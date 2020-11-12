@@ -1,14 +1,12 @@
 <template>
     <div id="recipe-page">
         <div v-if="recipe">
-            <show-recipe
-                :recipe="recipe"
+            <show-recipe 
+                :recipe="recipe" 
                 :includeDetails="true"
             ></show-recipe>
-        </div>
-
-        <div v-if="recipeNotFound">
-            <p>Recipe {{ id }} not found.</p>
+            <p class="ingredients" >{{ recipe.ingredients }}</p>
+            <p class="directions">{{ recipes.directions }}</p>
 
             <router-link v-bind:to="'/recipes'"
                 >Go to all recipes
@@ -19,7 +17,6 @@
 
 <script>
 import ShowRecipe from '@/components/ShowRecipe.vue';
-//import { recipes } from '@/recipes.js';
 
 export default {
     name: '',
@@ -36,7 +33,7 @@ export default {
                 return recipe.id == this.id;
             }, this.id)[0];
         },
-        recipeNotFound() {
+        recipeNotFound(){
             return this.recipe == null;
         },
     },

@@ -5,19 +5,26 @@
         <div id="inputs">
             <label for="name">Name</label>
             <input type="text" v-model="recipe.name" id="name" />
-
-            <label for="sku">SKU:</label>
-            <input type="text" v-model="recipe.sku" id="sku" />
-
-            <label for="price">Price:</label>
-            <input type="text" v-model="recipe.price" id="price" />
-
-            <label for="available">Quantity available:</label>
-            <input type="text" v-model="recipe.available" id="available" />
-
-            <label for="weight">Weight (in lbs):</label>
-            <input type="text" v-model="recipe.weight" id="weight" />
-
+<br>
+<br>
+            <label for="ingredients">Ingredients:</label>
+            <input type="textarea" v-model="recipe.ingredients" id="ingredients" />
+<br>
+<br>
+            <label for="directions">Directions:</label> 
+            <input type="textarea" v-model="recipe.directions" id="directions" />
+<br>
+<br>       <div class="ingredient">
+            <label class="ingredients">Ingredients</label>
+              <ul class="ingredients_list">
+                <li v-for="(item,index) in recipeModel.metadata.ingredients" :key="index">
+                   {{item.ingredient}}
+                <v-btn fab dark small error @click="removeIngrediant(index)" class="btn_remove_ingredient">
+                <v-icon dark>remove</v-icon>
+                </v-btn>
+                </li>
+            </ul>
+            </div>
             <label for="perishable" class="form-checkbox-label">
                 <input
                     type="checkbox"
@@ -26,9 +33,6 @@
                 />
                 Perishable?
             </label>
-
-            <label for="description">Description</label>
-            <textarea v-model="recipe.description" id="description"></textarea>
         </div>
 
         <button @click="addRecipe">Add Recipe</button>
@@ -46,14 +50,10 @@ export default {
             errors: null,
             showConfirmationMessage: false,
             recipe: {
-                name: 'Candy Heart Grapes',
-                sku: 'candy-heart-grapes-' + new Date().valueOf(),
-                price: 5.99,
-                available: 25,
-                weight: 2,
-                perishable: true,
-                description:
-                    'Next time the kids are craving candy, hand them a bowl of seedless Candy Heart grapes. Plump, red, and bursting with juice, they taste a little like raspberry lemonade and are just as refreshing. So go ahead and eat your heart out!',
+                name: '',
+                ingredients: '',
+                directions: '',
+                //perishable: true,
             },
         };
     },
@@ -68,6 +68,7 @@ export default {
                 }
             });
         },
+        
     },
 };
 </script>

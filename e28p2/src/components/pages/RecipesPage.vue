@@ -2,15 +2,14 @@
 <template>
     <div id="recipes">
         <h2>Recipes</h2>
+
         <router-link
             v-for="recipe in recipes"
             :key="recipe.id"
             v-bind:to="'/recipes/' + recipe.id"
-            exact
-        >
-        <show-recipe
-            :recipe="recipe"
-        ></show-recipe>
+            :includeDetails="true"
+            exact>
+            <show-recipe :recipe="recipe"></show-recipe>
         </router-link>
     </div>
 </template>
@@ -18,7 +17,8 @@
 <script>
 
 import ShowRecipe from '@/components/ShowRecipe.vue';
-import { recipes } from '@/recipes.js';
+//import { recipes } from '@/recipes.js';
+//import { axios } from '@/app.js';
 
 
 export default {
@@ -26,10 +26,9 @@ export default {
     components:{
         'show-recipe': ShowRecipe,
     },
+    props:['recipes', 'includeDetails'],
     data: function() {
-        return {
-            recipes: recipes,
-        };
+        return {};
     },
 
 };

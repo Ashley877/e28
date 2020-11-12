@@ -63,5 +63,5 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '@/assets/scss/recipes.scss';
+@import '@/assets/scss/recipe_book.scss';
 </style>

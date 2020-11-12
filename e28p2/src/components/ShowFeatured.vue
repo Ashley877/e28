@@ -22,9 +22,9 @@ export default {
     },
     computed: {
        featuredRecipes() {
-    return this.recipes.filter((recipe) => {
-        return recipe.categories.includes(this.category);
-    }, this.category);
+            return this.recipes.filter((recipe) => {
+                return recipe.categories.includes(this.category);
+            }, this.category);
 },
     }
      
