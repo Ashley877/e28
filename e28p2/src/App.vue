@@ -26,13 +26,14 @@ export default {
   name: 'App',
   data() {
     return{
-      links: ['recipes', 'favorites', 'categories'],
+      links: ['recipes', 'favorites', 'categories', 'add new recipe'],
 
       /* Map links to the appropriate component */
       paths: {
           recipes: '/',
           favorites: '/favorites',
           categories: '/categories',
+          'add new recipe': '/recipe/new',
       },
     }
   },

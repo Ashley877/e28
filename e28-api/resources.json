@@ -1,0 +1,43 @@
+{
+    "recipe": {
+        "name": {
+            "type": "string",
+            "validators": [
+                "required"
+                
+            ]
+        },
+        "ingredients": {
+            "type": "text",
+            "validators": [
+                "required"
+               
+            ]
+        },
+        "directions": {
+            "type": "text",
+            "validators": [
+                "required"
+            ]
+        },
+        
+        "categories": {
+            "type": "string",
+            "validators": []
+        }
+    },
+    "favorite": {
+        "recipe_id": {
+            "type": "integer",
+            "validators": [
+                "numeric"
+            ]
+        },
+        "user_id": {
+            "type": "integer",
+            "validators": [
+                "numeric"
+            ]
+        }
+    }
+}

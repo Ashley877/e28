@@ -1,11 +1,14 @@
 <template>
     <div id="recipes">
         <h2>Recipes</h2>
-        <show-recipe
+        <router-link
             v-for="recipe in recipes"
             :key="recipe.id"
-            :recipe="recipe"
-        ></show-recipe>
+            :to="'/recipes/'+ recipe.id" 
+            exact
+        >
+            <show-recipe :recipe="recipe"></show-recipe>
+        </router-link>
     </div>
 </template>
 

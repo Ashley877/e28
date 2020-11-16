@@ -1,0 +1,25 @@
+{
+    "seeds": [
+        {
+            "id": 1,
+            "name": "Driscoll’s Strawberries",
+            "ingredients": "driscolls-strawberries",
+            "directions": "Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.",
+            "categories": "produce,fruits"
+        },
+        {
+            "id": 2,
+            "name": "Pizza",
+            "ingredients": "driscolls-strawberries",
+            "directions": "Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.",
+            "categories": "produce,fruits"
+        },
+        {
+            "id": 3,
+            "name": "Apple Pie",
+            "ingredients": "driscolls-strawberries",
+            "directions": "Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.",
+            "categories": "produce,fruits"
+        }
+    ]
+}

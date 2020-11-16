@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { axios } from '@/app.js';
+//import { axios } from '@/app.js';
 
 export default {
     data() {
@@ -51,19 +51,19 @@ export default {
             },
         };
     },
-    methods: {
-        addRecipe() {
-            axios.post('/recipe', this.recipe).then((response) => {
-                if (response.data.errors) {
-                    this.errors = response.data.errors;
-                } else {
-                    this.$emit('update-recipes');
-                    this.showConfirmationMessage = true;
-                }
-            });
-        },
+    //methods: {
+     //   addRecipe() {
+      //      axios.post('/recipe', this.recipe).then((response) => {
+       //         if (response.data.errors) {
+        //            this.errors = response.data.errors;
+         //       } else {
+          //          this.$emit('update-recipes');
+           //         this.showConfirmationMessage = true;
+            //    }
+            //});
+        //},
         
-    },
+    //},
 };
 </script>
 
