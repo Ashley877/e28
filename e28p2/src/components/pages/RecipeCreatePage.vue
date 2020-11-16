@@ -15,28 +15,21 @@
             <input type="textarea" v-model="recipe.directions" id="directions" />
             <br>
             <br>      
-            <h4>Category</h4>
-             <input type="checkbox" name="category" value="snacks">Snacks<br>      
-             <input type="checkbox" name="category" value="sides">Side<br>      
-             <input type="checkbox" name="category" value="soup">Soup<br>    
-             <input type="checkbox" name="category" value="breakfast">Breakfast<br>      
-             <input type="checkbox" name="category" value="lunch">Lunch<br>      
-             <input type="checkbox" name="category" value="dinner">Dinner<br>     
-             <input type="checkbox" name="category" value="dessert">Dessert<br>     
-
+            <label for="categories">Categories:</label>
+            <input type="textarea" v-model="recipe.categories" id="categories" />       
         <br>      
         <br>
         <br>
         </div>
 
         <button @click="addRecipe">Add Recipe</button>
-
+        <div class="success" v-if="showConfirmationMessage">New Recipe Created!</div>
         {{ errors }}
     </div>
 </template>
 
 <script>
-//import { axios } from '@/app.js';
+import { axios } from '@/app.js';
 
 export default {
     data() {
@@ -51,19 +44,18 @@ export default {
             },
         };
     },
-    //methods: {
-     //   addRecipe() {
-      //      axios.post('/recipe', this.recipe).then((response) => {
-       //         if (response.data.errors) {
-        //            this.errors = response.data.errors;
-         //       } else {
-          //          this.$emit('update-recipes');
-           //         this.showConfirmationMessage = true;
-            //    }
-            //});
-        //},
-        
-    //},
+    methods: {
+        addRecipe() {
+            axios.post('/recipe', this.recipe).then((response) => {
+                if (response.data.errors != null) {
+                    this.errors = response.data.errors;
+                } else {
+                    this.$emit('update-recipes');
+                    this.showConfirmationMessage = true;
+                }
+            });
+        },        
+    },
 };
 </script>
 

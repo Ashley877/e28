@@ -3,15 +3,21 @@
         "name": {
             "type": "string",
             "validators": [
-                "required"
-                
+                "required",
+                "min:3",
+                "max:100"
+            ]
+        },
+        "sku": {
+            "type": "string",
+            "validators": [
+               
             ]
         },
         "ingredients": {
             "type": "text",
             "validators": [
                 "required"
-               
             ]
         },
         "directions": {
@@ -20,10 +26,11 @@
                 "required"
             ]
         },
-        
         "categories": {
-            "type": "string",
-            "validators": []
+            "type": "text",
+            "validators": [
+                "required"
+            ]
         }
     },
     "favorite": {

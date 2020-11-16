@@ -1,16 +1,23 @@
 export const recipes = [
-            {
-                id:1,
-                name:'Pie',
-                ingredients: 'add stuff',
-                directions: 'do things',
-                categories: ['breakfast','dessert']
-            },
-            {
-                id:2,
-                name: 'Scones',
-                ingredients: 'add stuff',
-                directions: 'do things',
-                categories: ['dinner','dessert']
-            }
+          {
+            "id": 1,
+            "name": "Vanilla Scones",
+            "ingredients": "2½ cups all-purpose flour, ½ teaspoon salt, 1 tablespoon baking powder, ⅓ cup granulated sugar, 1 egg, ½ cup milk, 1 tablespoons pure vanilla extract (I used vanilla bean paste), ¾ cup cold unsalted butter cubed, 1½ cups confectioners sugar, 2 tablespoons water (may need more), 2 tablespoons unsalted butter melted, 2 teaspoons pure vanilla extract (I used vanilla bean paste)",
+            "directions": "Preheat oven to 425 degrees and line a baking mat with parchment paper or a non-stick baking mat; set aside., In a stand-alone mixer fitted with a paddle attachment mix together the flour, salt, baking powder, and granulated sugar. Add cold cubed butter and mix on low-speed until course crumbs forms - careful not to over-mix.,In a small bowl, whisk together the egg, milk, and vanilla then add it to the mixer and mix until dough comes together. It will be crumbly., Flour a clean service and kneed dough just a bit until it comes together. Form it into a circle about 1 inch in thickness. Use a knife or pizza cutter to cut scones into 8 wedges. Place on baking sheet and sprinkle with granulated sugar. Bake for 10-14 minutes or until edges are slightly golden. Remove from oven and place on a cooling rack to cool., While scones are cooling, add all the glaze ingredients into a bowl and whisk - glaze will be slightly thick but should drizzle off a spoon. Use a spoon to spread glaze over cooled scones. Let stand until glaze is set.",
+            "categories": "breakfast"
+        },
+        {
+            "id": 2,
+            "name": "Easy Shepherd’s Pie",
+            "ingredients": "1 1/2 to 2 pounds potatoes (about 3 large potatoes) peeled and quartered, 8 Tablespoons (1 stick) butter, 1 medium onion, chopped (about 1 1/2 cups), 1-2 cups vegetables—diced carrots, corn, peas, 1 1/2 lbs ground round beef, 1/2 cup beef broth, 1 teaspoon Worcestershire sauce, Salt, pepper, other seasonings of choice",
+            "directions": "Boil the potatoes: Place the peeled and quartered potatoes in medium sized pot. Cover with at least an inch of cold water. Add a teaspoon of salt. Bring to a boil, reduce to a simmer, and cook until tender (about 20 minutes)., Sauté vegetables: While the potatoes are cooking, melt 4 tablespoons of the butter in a large sauté pan on medium heat. Add the chopped onions and cook until tender, about 6 to 10 minutes., If you are including vegetables, add them according to their cooking time. Carrots should be cooked with the onions, because they take as long to cook as the onions do., If you are including peas or corn, add them toward the end of the cooking of the onions, or after the meat starts to cook, as they take very little cooking time., Add the ground beef, then Worcestershire sauce and broth: Add ground beef to the pan with the onions and vegetables. Cook until no longer pink. Season with salt and pepper., Add the Worcestershire sauce and beef broth. Bring the broth to a simmer and reduce heat to low. Cook uncovered for 10 minutes, adding more beef broth if necessary to keep the meat from drying out., Mash the cooked potatoes: When the potatoes are done cooking (a fork can easily pierce), remove them from the pot and place them in a bowl with the remaining 4 Tbsp of butter. Mash with a fork or potato masher, and season with salt and pepper to taste., Layer the meat mixture and mashed potatoes in a casserole dish: Preheat oven to 400°F. Spread the beef, onions, and vegetables (if using) in an even layer in a large baking dish (9x13 casserole)., Spread the mashed potatoes over the top of the ground beef. Rough up the surface of the mashed potatoes with a fork so there are peaks that will get well browned. You can even use a fork to make creative designs in the mashed potatoes., Bake in oven: Place in a 400°F oven and cook until browned and bubbling, about 30 minutes. If necessary, broil for the last few minutes to help the surface of the mashed potatoes brown., (Be careful when broiling using Pyrex or glass dishes, they have been known to shatter under the high heat of the broiler. It's not a worry if you are using a ceramic or metal casserole dish.)",
+            "categories": "dinner"
+        },
+        {
+            "id": 3,
+            "name": "Apple Pie",
+            "ingredients": "driscolls-strawberries",
+            "directions": "Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.",
+            "categories": "produce,fruits"
+        }
             ]

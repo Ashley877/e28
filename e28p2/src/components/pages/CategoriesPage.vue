@@ -8,18 +8,19 @@
 </template>
 
 <script >
-import { recipes } from '@/recipes.js';
+//import { recipes } from '@/recipes.js';
+//import { axios } from '@/app.js';
 export default {
     name: '',
-    props: [''],
+    props: ['recipes'],
     data: function(){
         return{
-            recipes: recipes,
+            //recipes: recipes,
         };
     } ,
     computed:{
         categories() {
-            let categories = this.recipes.map(recipe => recipe.categories);
+            let categories = this.recipes.map(recipe => recipe.categories.split(','));
             let mergedCategories = [].concat.apply([], categories);
 
             // Return unique, sorted categories

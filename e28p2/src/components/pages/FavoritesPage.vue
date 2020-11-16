@@ -2,6 +2,7 @@
   <div>
     <p>Add a Recipe to the book or mark your favorites!</p>
     <show-favorites :category="'dinner'"></show-favorites>
+   
 
   </div>
 </template>

@@ -1,24 +1,72 @@
 {
     "seeds": [
         {
-            "id": 1,
-            "name": "Driscoll’s Strawberries",
-            "ingredients": "driscolls-strawberries",
-            "directions": "Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.",
+            "name": "Vanilla Scones",
+            "ingredients": "all the things",
+            "directions": "stuff",
             "categories": "produce,fruits"
         },
         {
-            "id": 2,
-            "name": "Pizza",
-            "ingredients": "driscolls-strawberries",
-            "directions": "Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.",
+            "name": "Nestle Toll House Cookie Dough",
+            "sku": "nestle-toll-house-cookie-dough",
+            "ingredients": "all the things",
+            "directions": "stuff",
             "categories": "produce,fruits"
         },
         {
-            "id": 3,
-            "name": "Apple Pie",
-            "ingredients": "driscolls-strawberries",
-            "directions": "Driscoll’s Strawberries are consistently the best, sweetest, juiciest strawberries available. This size is the best selling, as it is both convenient for completing a cherished family recipes and for preparing a quick snack straight from the fridge.",
+            "name": "Gotham Greens Gourmet Lettuce Medley",
+            "sku": "gotham-greens-lettuce-medley",
+            "ingredients": "all the things",
+            "directions": "stuff",
+            "categories": "produce,fruits"
+        },
+        {
+            "name": "Gold Medal All Purpose Flour",
+            "sku": "gold-medal-flour",
+            "ingredients": "all the things",
+            "directions": "stuff",
+            "categories": "produce,fruits"
+        },
+        {
+            "name": "Honey Nut Cheerios",
+            "sku": "honey-nut-cheerios",
+            "ingredients": "all the things",
+            "directions": "stuff",
+            "categories": "produce,fruits"
+        },
+        {
+            "name": "Eggo Nutri-Grain Whole Wheat Waffles",
+            "sku": "eggo-nutri-grain-whole-wheat-waffles",
+            "ingredients": "all the things",
+            "directions": "stuff",
+            "categories": "produce,fruits"
+        },
+        {
+            "name": "Amy's Cheese Pizza",
+            "sku": "amys-cheese-pizza",
+            "ingredients": "all the things",
+            "directions": "stuff",
+            "categories": "produce,fruits"
+        },
+        {
+            "name": "Birds Eye Steamfresh Fresh Frozen Vegetable Mix",
+            "sku": "birds-eye-vegetable-mix",
+            "ingredients": "all the things",
+            "directions": "stuff",
+            "categories": "produce,fruits"
+        },
+        {
+            "name": "Bare Coconut Chips",
+            "sku": "bare-coconut-chips",
+            "ingredients": "all the things",
+            "directions": "stuff",
+            "categories": "produce,fruits"
+        },
+        {
+            "name": "Snapple Peach Tea",
+            "sku": "snapple-peach-tea",
+            "ingredients": "all the things",
+            "directions": "stuff",
             "categories": "produce,fruits"
         }
     ]

@@ -15,17 +15,23 @@
 
 <script >
 import ShowRecipe from '@/components/ShowRecipe.vue';
-import { recipes } from '@/recipes.js';
+//import { axios } from '@/app.js';
 export default {
     name: '',
     components:{
         'show-recipe' : ShowRecipe,
     },
+    props: ['recipes'],
     data: function () {
         return{
-            recipes:recipes
         };
-    }   
+    },
+    //mounted() {
+     //   axios.get('recipe').then((response) => {
+    //        this.recipes = response.data.recipe;
+    //        console.log(response.data);
+    //    });  
+    //}, 
 };
 </script>
 

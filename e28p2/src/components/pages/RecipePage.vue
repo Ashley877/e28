@@ -6,6 +6,8 @@
                 :recipe="recipe"
                 :includeDetails="true"
             ></show-recipe>
+            <button v-on:click="togglefav" ><i v-bind:class="[is_fav ?  'icon-heart' : 'icon-heart-empty', 'fa']" aria-hidden="true"></i></button>
+
         </div>
         <div v-if="recipeNotFound">
             <p> Recipe {{ id }} not found. </p>
@@ -19,31 +21,40 @@
 
 
 <script >
+
 import ShowRecipe from '@/components/ShowRecipe.vue';
-import { recipes } from '@/recipes.js';
+//import { axios } from '@/app.js'
+//import { recipes } from '@/recipes.js';
 export default {
     name: '',
-    props:['id'],
+    props:['id','recipes'],
     components: {
         'show-recipe': ShowRecipe,
     },
     data: function () {
         return{
-          recipe: null,
-          recipes: recipes,
-          recipeNotFound:false,
+          //recipe: null,
+          //recipes: [],
+          //recipeNotFound:false,
         };
-    } , 
-    mounted() {
-        this.recipe = this.recipes.filter((recipe) => {
-            return recipe.id == this.id;
-        },  this.id)[0];
-        if (this.recipe == null) {
-            this.recipeNotFound = true;
+    }, 
+    computed: {
+        recipe() {
+            return this.recipes.filter((recipe) => {
+                return recipe.id == this.id;
+            }, this.id)[0];
+        },
+        recipeNotFound() {
+            return this.recipe == null;
         }
+    },
 
-        
-    } 
+    methods:{
+      togglefav:function(){
+        this.$emit('togglefav',!this.is_fav);
+      },
+    },
+    
 };
 </script>
 

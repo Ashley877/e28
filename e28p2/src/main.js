@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueRouter from 'vue-router';
+import VueRouter from 'vue-router'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 import FavoritesPage from '@/components/pages/FavoritesPage.vue';
 import RecipesPage from '@/components/pages/RecipesPage.vue';
 import CategoriesPage from '@/components/pages/CategoriesPage.vue';
