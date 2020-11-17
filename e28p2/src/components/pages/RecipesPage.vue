@@ -15,7 +15,6 @@
 
 <script >
 import ShowRecipe from '@/components/ShowRecipe.vue';
-//import { axios } from '@/app.js';
 export default {
     name: '',
     components:{
@@ -25,13 +24,7 @@ export default {
     data: function () {
         return{
         };
-    },
-    //mounted() {
-     //   axios.get('recipe').then((response) => {
-    //        this.recipes = response.data.recipe;
-    //        console.log(response.data);
-    //    });  
-    //}, 
+    }, 
 };
 </script>
 

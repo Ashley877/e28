@@ -1,36 +1,45 @@
 <template>
-    <div id="favorites">
-        <h2>Favorite Recipes</h2>
+    <div id="favorite">
+        <router-link
+            v-for="recipe in recipes"
+            :key="recipe.id"
+            :to="'/recipes/'+ recipe.id" 
+            exact
+        >
+            <show-recipe :recipe="recipe"></show-recipe>
+        </router-link>
         <ul class="cleanList">
-            <li v-for="recipe in favoriteRecipes" :key="recipe.id">
-                {{ recipe.name }}    
-                <button v-on:click="togglefav" ><i v-bind:class="[is_fav ?  'icon-heart' : 'icon-heart-empty']" aria-hidden="true"></i>unFavorite</button>
-
+            <li v-for="recipe in favoriterecipes" :key="recipe.id">
+                {{ recipe.favorite }} 
+            
             </li>
-        </ul>
+        </ul>   
+    <div class="favorite"> 
+    </div>
     </div>
 </template>
 
-
 <script>
-import { recipes } from '@/recipes.js';
+import { axios } from '@/app.js';
+import ShowRecipe from '@/components/ShowRecipe.vue';
+
 export default {
-    name: 'show-favorites',
-    props: ['category'],
-    data: function(){
+    name: 'show-favorite',
+    props: ['recipes', 'favorite'],
+    components:{
+        'show-recipe': ShowRecipe
+        
+    },
+    data: function () {
         return {
-            recipes: recipes,
         };
     },
-    computed:{
-        favoriteRecipes() {
-            return this.recipes.filter((recipe) => {
-                return recipe.categories.includes(this.category);
-            }, this.category);
-        },
-    },   
+    methonds:{
+         favoriterecipes() {
+            axios.get('/recipe/query?favorite=1').then(response => {
+                console.log(response.data);
+            });
+        }
+    },  
 };
 </script>
-
-<style scoped>
-</style>

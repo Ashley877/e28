@@ -40,7 +40,8 @@ export default {
                 name: '',
                 ingredients: '',
                 directions: '',
-                categories:''
+                categories:'',
+                favorite:'0'
             },
         };
     },

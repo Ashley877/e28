@@ -8,6 +8,7 @@ Vue.use(BootstrapVueIcons)
 import FavoritesPage from '@/components/pages/FavoritesPage.vue';
 import RecipesPage from '@/components/pages/RecipesPage.vue';
 import CategoriesPage from '@/components/pages/CategoriesPage.vue';
+import ShoppingPage from '@/components/pages/ShoppingPage.vue';
 import RecipePage from '@/components/pages/RecipePage.vue';
 import RecipeCreatePage from '@/components/pages/RecipeCreatePage.vue';
 
@@ -21,6 +22,7 @@ const router = new VueRouter({
         { path: '/', component: RecipesPage },
         { path: '/favorites', component: FavoritesPage },
         { path: '/categories', component: CategoriesPage },
+        { path: '/shopping', component: ShoppingPage },
         { path: '/recipe/new', component: RecipeCreatePage},
         { path: '/recipes/:id', component: RecipePage, props:true },
     ],

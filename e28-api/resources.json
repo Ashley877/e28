@@ -8,12 +8,7 @@
                 "max:100"
             ]
         },
-        "sku": {
-            "type": "string",
-            "validators": [
-               
-            ]
-        },
+        
         "ingredients": {
             "type": "text",
             "validators": [
@@ -31,19 +26,11 @@
             "validators": [
                 "required"
             ]
-        }
-    },
-    "favorite": {
-        "recipe_id": {
-            "type": "integer",
-            "validators": [
-                "numeric"
-            ]
         },
-        "user_id": {
+        "favorite": {
             "type": "integer",
             "validators": [
-                "numeric"
+                "boolean"
             ]
         }
     }

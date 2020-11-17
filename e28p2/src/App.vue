@@ -27,24 +27,29 @@ export default {
   data() {
     return{
       recipes: [],
-      links: ['recipes', 'favorites', 'categories', 'add new recipe'],
+      links: ['recipes', 'favorites', 'categories', 'shopping', 'add new recipe'],
 
       /* Map links to the appropriate component */
       paths: {
           recipes: '/',
           favorites: '/favorites',
           categories: '/categories',
+          shopping:'/shopping',
           'add new recipe': '/recipe/new',
       },
     }
   },
   methods: {
     updateRecipes(){
-    axios.get('recipe').then((response) => {
-      this.recipes = response.data.recipe;
-    });  
-    }
-  },
+      axios.get('recipe').then((response) => {
+        response.data.recipe.forEach((recipe) => {
+            recipe.favorite = Boolean(Number(recipe.favorite));
+        });
+        this.recipes = response.data.recipe;
+    });
+},  
+    
+    },
   mounted() {
     this.updateRecipes();
   }, 

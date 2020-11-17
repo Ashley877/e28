@@ -1,24 +1,38 @@
-# e28p2
+# Project 2
 
-## Project setup
-```
-npm install
-```
+- By: Ashley Hirst
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Production URL: <http://e28p2.ashley877.me>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Pages summary
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Recipes (shows all the recipes)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Favorites (mark each recipe as a favorite)
+
+- Recipe (shows a single recipe)
+
+- Add Recipe (adds a new recipe to the API)
+
+## SFC summary
+
+- Show recipe
+- Show favorites
+
+## Server interaction
+
+- Add a new recipe to API
+
+- Pulls recipes from API to their own pages
+
+- Adds and removes from favorites
+
+## Outside resources
+
+- [Vanilla scones](https://www.stuckonsweet.com/vanilla-scones/)
+
+* [Shepards pie](https://www.simplyrecipes.com/recipes/easy_shepherds_pie/)
+
+## Notes for instructor
+
+I did have a hard time with access on my computer at one point I had the site working and uploaded to my git (or so I thought) I tried to pull the files down turned out when I thought it uploaded it the permission was denied and I lost my project a week in. I feel like I ran out of time after that and didn't get a chance to make it look as pretty as I would have liked.

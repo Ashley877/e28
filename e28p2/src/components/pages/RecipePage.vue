@@ -1,17 +1,15 @@
 <template>
     <div id="recipe-page">
         <div v-if="recipe">
-            <h2>Recipe {{id}} </h2>
             <show-recipe
                 :recipe="recipe"
                 :includeDetails="true"
             ></show-recipe>
-            <button v-on:click="togglefav" ><i v-bind:class="[is_fav ?  'icon-heart' : 'icon-heart-empty', 'fa']" aria-hidden="true"></i></button>
-
+            <input type="checkbox" id="favorite" true-value="1" false-value="0" v-model="recipe.favorite"/>{{ recipe.favortie }}
+            <button @click="addFavorite">Add Favorite</button>
         </div>
         <div v-if="recipeNotFound">
             <p> Recipe {{ id }} not found. </p>
-
             <router-link v-bind:to="'/'"
                 >Go to all recipes
             </router-link>
@@ -23,22 +21,25 @@
 <script >
 
 import ShowRecipe from '@/components/ShowRecipe.vue';
-//import { axios } from '@/app.js'
-//import { recipes } from '@/recipes.js';
+import { axios } from '@/app.js'
 export default {
     name: '',
-    props:['id','recipes'],
+    props:['id','recipes', 'favorite'],
     components: {
         'show-recipe': ShowRecipe,
     },
     data: function () {
         return{
-          //recipe: null,
-          //recipes: [],
-          //recipeNotFound:false,
         };
     }, 
     computed: {
+        ingredients() {
+            let ingredients = this.recipes.map(recipe => recipe.ingredients.split(','));
+            let mergedIngredients = [].concat.apply([], ingredients);
+
+            // Return unique, sorted categories
+            return [...new Set(mergedIngredients)].sort();
+        },
         recipe() {
             return this.recipes.filter((recipe) => {
                 return recipe.id == this.id;
@@ -46,13 +47,19 @@ export default {
         },
         recipeNotFound() {
             return this.recipe == null;
-        }
+        },
     },
-
     methods:{
-      togglefav:function(){
-        this.$emit('togglefav',!this.is_fav);
-      },
+        addFavorite() {
+            axios.put('/recipe/'+this.recipe.id, this.recipe).then((response) => {
+                if (response.data.errors != null) {
+                    this.errors = response.data.errors;
+                } else {
+                    this.$emit('update-recipes')
+                }
+            });
+        },
+        
     },
     
 };
