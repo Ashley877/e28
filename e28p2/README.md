@@ -14,6 +14,9 @@
 
 - Add Recipe (adds a new recipe to the API)
 
+* Shopping list (takes all the ingredents into one list)
+* category page
+
 ## SFC summary
 
 - Show recipe
@@ -35,4 +38,4 @@
 
 ## Notes for instructor
 
-I did have a hard time with access on my computer at one point I had the site working and uploaded to my git (or so I thought) I tried to pull the files down turned out when I thought it uploaded it the permission was denied and I lost my project a week in. I feel like I ran out of time after that and didn't get a chance to make it look as pretty as I would have liked.
+I did have a hard time with access on my computer at one point I had the site working and uploaded to my git (or so I thought) I tried to pull the files down turned out when I thought it uploaded it the permission was denied and I lost my project a week in. I feel like I ran out of time after that and didn't get a chance to add some features for some of the pages. I had a lot of trouble with the favorite page I tried to add a remove from favorites on that page but it just didn't seem to work and kept getting hung up and froze the whole page so you need to go to the recipe page and just uncheck it to remove it from the favorite page. The shopping list was an additional page I was trying out I was able to get all the ingredients to be listed but didn't have a chance to dive deeper on how to add a button for each recipe to add/remove it from the list.
