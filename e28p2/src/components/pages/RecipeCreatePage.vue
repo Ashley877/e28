@@ -3,19 +3,19 @@
         <h2>Add a Recipe</h2>
 
         <div id="inputs">
-            <label for="name">Name</label>
+            <label for="name">Name</label><br><br>
             <input type="textarea" v-model="recipe.name" id="name" />
             <br>
             <br>
-            <label for="ingredients">Ingredients:</label>
+            <label for="ingredients">Ingredients (seperate by comma):</label><br><br>
             <input type="textarea" v-model="recipe.ingredients" id="ingredients" />
             <br>
             <br>
-            <label for="directions">Directions:</label> 
+            <label for="directions">Directions (seperate by comma):</label> <br><br>
             <input type="textarea" v-model="recipe.directions" id="directions" />
             <br>
             <br>      
-            <label for="categories">Categories:</label>
+            <label for="categories">Categories:</label><br><br>
             <input type="textarea" v-model="recipe.categories" id="categories" />       
         <br>      
         <br>

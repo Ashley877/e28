@@ -5,8 +5,7 @@
             v-for="recipe in recipes"
             :key="recipe.id"
             :to="'/recipes/'+ recipe.id" 
-            exact
-        >
+            exact>
             <show-recipe :recipe="recipe"></show-recipe>
         </router-link>
     </div>

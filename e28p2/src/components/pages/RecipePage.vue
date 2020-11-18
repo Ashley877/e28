@@ -5,8 +5,8 @@
                 :recipe="recipe"
                 :includeDetails="true"
             ></show-recipe>
-            <input type="checkbox" id="favorite" true-value="1" false-value="0" v-model="recipe.favorite"/>{{ recipe.favortie }}
-            <button @click="addFavorite">Add Favorite</button>
+            <input type="checkbox" id="favorite" v-model="recipe.favorite"/>{{ recipe.favortie }}
+            <button true-value="1" false-value="0" @click="addFavorite">Add/Remove Favorite</button>
         </div>
         <div v-if="recipeNotFound">
             <p> Recipe {{ id }} not found. </p>
@@ -19,7 +19,6 @@
 
 
 <script >
-
 import ShowRecipe from '@/components/ShowRecipe.vue';
 import { axios } from '@/app.js'
 export default {
@@ -33,13 +32,7 @@ export default {
         };
     }, 
     computed: {
-        ingredients() {
-            let ingredients = this.recipes.map(recipe => recipe.ingredients.split(','));
-            let mergedIngredients = [].concat.apply([], ingredients);
 
-            // Return unique, sorted categories
-            return [...new Set(mergedIngredients)].sort();
-        },
         recipe() {
             return this.recipes.filter((recipe) => {
                 return recipe.id == this.id;
@@ -47,6 +40,13 @@ export default {
         },
         recipeNotFound() {
             return this.recipe == null;
+        },
+        ingredients() {
+            let ingredients = this.recipes.map(recipe => recipe.ingredients.split(','));
+            let mergedIngredients = [].concat.apply([], ingredients);
+
+            // Return unique, sorted categories
+            return [...new Set(mergedIngredients)].sort();
         },
     },
     methods:{

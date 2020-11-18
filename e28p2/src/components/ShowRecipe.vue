@@ -7,8 +7,8 @@
         />
         <div v-if="includeDetails"> 
             <p class="recipe-favorite">{{recipe.favortie}}</p>
-            <p class="recipe-ingredients">{{ recipe.ingredients }}</p>
-            <p class="recipe-directions">{{ recipe.directions }}</p>
+            <p v-if="ingredients"  class="recipe-ingredients">Ingredients<br>{{ recipe.ingredients }}</p>
+            <p class="recipe-directions">Directions<br>{{ recipe.directions }}</p>
 
         </div>
     </div>
@@ -29,6 +29,10 @@ export default {
             } catch (e) {
                 return require('@/assets/images/recipes/image-not-available.jpg');
             }
+        },
+        ingredients() {
+            let ingredients = this.recipe.ingredients.split(',');
+            return ingredients;
         },
     },
 };

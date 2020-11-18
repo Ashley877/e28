@@ -2,17 +2,20 @@
     <div id="favorite">
         <router-link
             v-for="recipe in recipes"
-            :key="recipe.id"
+            :key="recipe.name"
             :to="'/recipes/'+ recipe.id" 
             exact
         >
             <show-recipe :recipe="recipe"></show-recipe>
         </router-link>
         <ul class="cleanList">
-            <li v-for="recipe in favoriterecipes" :key="recipe.id">
+            <router-link
+             v-for="recipe in favoriterecipes" 
+             :key="recipe.name" 
+             :to="'/recipes/'+ recipe.id"
+             exact>
                 {{ recipe.favorite }} 
-            
-            </li>
+            </router-link>
         </ul>   
     <div class="favorite"> 
     </div>
