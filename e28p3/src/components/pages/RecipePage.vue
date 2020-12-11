@@ -8,12 +8,10 @@
           Your list has been updated!
         </div>
       </transition>
-      <input type="checkbox" id="favorite" v-model="recipe.favorite" />{{
-        recipe.favortie
-      }}
-      <button true-value="1" false-value="0" @click="addFavorite">
-        Add/Remove Favorite
-      </button>
+     <div v-if="user">
+                <button v-if="isFavorite" @click="removeFromFavorites()">Remove from favorites</button>
+                <button v-else @click="addToFavorites()">❤ Add to favorites</button>
+      </div>
     </div>
     <div v-if="recipeNotFound">
       <p>Recipe {{ id }} not found.</p>
@@ -26,8 +24,16 @@
 import ShowRecipe from "@/components/ShowRecipe.vue";
 import { axios } from "@/common/app.js";
 import { cart } from "@/common/app.js";
+import useFavorite from '@/features/useFavorite.js';
 
 export default {
+  setup(props) {
+        const { isFavorite, addToFavorites, removeFromFavorites } = useFavorite(
+            props.id
+        );
+
+        return { isFavorite, addToFavorites, removeFromFavorites };
+    },
   name: "",
   props: ["id", "recipes", "favorite"],
   components: {
@@ -59,6 +65,9 @@ export default {
     recipesStore() {
       return this.$store.state.recipes;
     },
+    user() {
+            return this.$store.state.user;
+        },
   },
   methods: {
     addFavorite() {

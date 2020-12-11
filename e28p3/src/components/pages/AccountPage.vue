@@ -3,15 +3,7 @@
     <div v-if="user">
       <h2 data-test="welcome-message">Hi, {{ user.name }}!</h2>
 
-      <div id="favorites">
-        <strong>Your Favorites</strong>
-        <p v-if="favorites && favorites.length == 0">
-          No favorites yet.
-        </p>
-        <li v-for="(favorite, key) in favorites" v-bind:key="key">
-          {{ favorite.name }}
-        </li>
-      </div>
+      
 
       <button @click="logout" data-test="logout-button">Logout</button>
     </div>
@@ -75,17 +67,7 @@ export default {
     },
   },
   methods: {
-    loadFavorites() {
-      if (this.user) {
-        // Because favorite is a auth-protected resource, this will
-        // only return favorites belonging to the authenticated user
-        axios.get("favorite").then((response) => {
-          this.favorites = response.data.favorite.map((favorite) => {
-            return this.$store.getters.getRecipeById(favorite.recipe_id);
-          });
-        });
-      }
-    },
+
     login() {
       axios.post("login", this.data).then((response) => {
         if (response.data.authenticated) {

@@ -9,7 +9,7 @@ const routes = [
         component: () => import('@/components/pages/FavoritesPage.vue'),
     },
     {
-        path: '/recipes',
+        path: '/',
         component: () => import('@/components/pages/RecipesPage.vue'),
     },
     {
@@ -17,7 +17,7 @@ const routes = [
         component: () => import('@/components/pages/CategoriesPage.vue'),
     },
     {
-        path: '/recipes/new',
+        path: '/recipe/new',
         component: () => import('@/components/pages/RecipeCreatePage.vue'),
         // Note the addition of this meta attribute:
         meta: {

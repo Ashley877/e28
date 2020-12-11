@@ -4,7 +4,7 @@
         <!-- input fields -->
         <div id="inputs">
             <label for="name">Name</label><br><br>
-            <input type="textarea" v-model="recipe.name" id="name" />
+            <input type="textarea" v-model="recipe.name" id="name" v-on:blur="validate()"/>
             <small class="form-help">Min: 3, Max:100</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -13,7 +13,7 @@
             <br>
             <br>
             <label for="ingredients">Ingredients (seperate by comma):</label><br><br>
-            <input type="textarea" v-model="recipe.ingredients" id="ingredients" />
+            <input type="textarea" v-model="recipe.ingredients" id="ingredients" v-on:blur="validate()"/>
             <small class="form-help">Min: 3</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -22,7 +22,7 @@
             <br>
             <br>
             <label for="directions">Directions (seperate by comma):</label> <br><br>
-            <input type="textarea" v-model="recipe.directions" id="directions" />
+            <input type="textarea" v-model="recipe.directions" id="directions" v-on:blur="validate()"/>
             <small class="form-help">Min: 3</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -31,7 +31,7 @@
             <br>
             <br>      
             <label for="categories">Categories:</label><br><br>
-            <input type="textarea" v-model="recipe.categories" id="categories" /> 
+            <input type="textarea" v-model="recipe.categories" id="categories" v-on:blur="validate()"/> 
             <small class="form-help">Min: 3</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -62,6 +62,7 @@
 <script>
 import { axios } from '@/common/app.js';
 import ErrorField from '@/components/ErrorField.vue';
+import Validator from 'validatorjs'
 
 export default {
     components:{
@@ -81,6 +82,19 @@ export default {
         };
     },
  methods: {
+     validate() {
+            let validator = new Validator(this.recipe, {
+                name: 'required|between:3,100',
+                ingredients: 'required|min:3',
+                directions: 'required|min:3',
+                description: 'required|min:3',
+                categories: 'required|min:3',
+            });
+
+            this.errors = validator.errors.all();
+
+            return validator.passes();
+        },
         addRecipe() {
             axios.post('/recipe', this.recipe).then((response) => {
                 if (response.data.errors) {
@@ -106,6 +120,7 @@ export default {
                 }
             });
         },
+        
     },
 };
 </script>

@@ -64,7 +64,7 @@ export default {
     this.updateRecipes();
     this.$store.dispatch("fetchRecipes");
     this.$store.commit("setCartCount", cart.count());
-    this.$store.dispatch("authUser");
+  
   },
   computed: {
     cartCount() {
