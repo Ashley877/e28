@@ -12,25 +12,38 @@
         "ingredients": {
             "type": "text",
             "validators": [
-                "required"
+                "required",
+                "min:3"
             ]
         },
         "directions": {
             "type": "text",
             "validators": [
-                "required"
+                "required",
+                "min:3"
             ]
         },
         "categories": {
             "type": "text",
             "validators": [
-                "required"
+               "required",
+                "min:3"
             ]
+        }
         },
         "favorite": {
+            "recipe_id": {
+                "type": "integer",
+                "validators": [
+                    "required",
+                    "numeric"
+                ]
+        },
+        "user_id": {
             "type": "integer",
             "validators": [
-                "boolean"
+                "required",
+                "numeric"
             ]
         }
     }
