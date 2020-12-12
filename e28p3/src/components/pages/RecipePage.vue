@@ -42,6 +42,7 @@ export default {
   data: function() {
     return {
       addAlert: false,
+
     };
   },
   computed: {

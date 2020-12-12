@@ -6,7 +6,7 @@
 
     <ul class="cleanList" v-if="recipesLoaded">
       <li v-for="item in items" :key="item.id">
-        {{ getRecipeDetails(item.id).ingredients.split(",") }}
+        {{ getRecipeDetails(item.id).ingredients }}<br>
         <button @click="removeFromCart(item.id)">Remove</button>
       </li>
     </ul>

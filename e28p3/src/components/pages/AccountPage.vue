@@ -54,7 +54,6 @@ export default {
         password: "asdfasdf",
       },
       errors: null,
-      favorites: [],
     };
   },
   computed: {
@@ -85,13 +84,6 @@ export default {
       });
     },
   },
-  watch: {
-    user() {
-      this.loadFavorites();
-    },
-  },
-  mounted() {
-    this.loadFavorites();
-  },
 };
+  
 </script>
