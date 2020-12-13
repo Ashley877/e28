@@ -2,9 +2,9 @@
   <div id="recipe-page">
     <div v-if="recipe">
       <show-recipe :recipe="recipe" :includeDetails="true"></show-recipe>
-      <button v-on:click="addToShopping">Add To Shopping List</button>
+      <button v-on:click="addToShopping" data-test="add-to-shopping-button">Add To Shopping List</button>
       <transition name="fade">
-        <div class="alert" v-if="addAlert">
+        <div class="alert" data-test="add-to-shopping-conformation" v-if="addAlert">
           Your list has been updated!
         </div>
       </transition>

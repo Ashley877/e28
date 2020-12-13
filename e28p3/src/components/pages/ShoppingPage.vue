@@ -4,10 +4,10 @@
 
     <div v-if="items.length == 0">No items</div>
 
-    <ul class="cleanList" v-if="recipesLoaded">
+    <ul data-test="cart-contents" class="cleanList" v-if="recipesLoaded">
       <li v-for="item in items" :key="item.id">
         {{ getRecipeDetails(item.id).ingredients }}<br>
-        <button @click="removeFromCart(item.id)">Remove</button>
+        <button data-test="remove-from-cart-button" @click="removeFromCart(item.id)">Remove</button>
       </li>
     </ul>
   </div>

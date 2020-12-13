@@ -1,7 +1,7 @@
 <template>
   <div class="recipe">
-    <h1 class="recipe-name">{{ recipe.name }}</h1>
-    <img class="recipe-thumb" :src="imageSource" />
+    <h1 class="recipe-name" data-test="recipe-name" >{{ recipe.name }}</h1>
+    <img class="recipe-thumb" :data-test="'recipe-image-' + recipe.id" :src="imageSource" />
     <div v-if="includeDetails">
       <p class="recipe-favorite">{{ recipe.favortie }}</p>
       <div class="ingredients">

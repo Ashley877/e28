@@ -4,7 +4,7 @@
         <!-- input fields -->
         <div id="inputs">
             <label for="name">Name</label><br><br>
-            <input type="textarea" v-model="recipe.name" id="name" v-on:blur="validate()"/>
+            <input type="text" data-test="recipe-name-input" v-model="recipe.name" id="name" v-on:blur="validate()"/>
             <small class="form-help">Min: 3, Max:100</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -13,7 +13,7 @@
             <br>
             <br>
             <label for="ingredients">Ingredients (seperate by comma):</label><br><br>
-            <input type="textarea" v-model="recipe.ingredients" id="ingredients" v-on:blur="validate()"/>
+            <input type="textarea" data-test="recipe-name-ingredients" v-model="recipe.ingredients" id="ingredients" v-on:blur="validate()"/>
             <small class="form-help">Min: 3</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -22,7 +22,7 @@
             <br>
             <br>
             <label for="directions">Directions (seperate by comma):</label> <br><br>
-            <input type="textarea" v-model="recipe.directions" id="directions" v-on:blur="validate()"/>
+            <input type="textarea" data-test="recipe-name-directions" v-model="recipe.directions" id="directions" v-on:blur="validate()"/>
             <small class="form-help">Min: 3</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -31,7 +31,7 @@
             <br>
             <br>      
             <label for="categories">Categories:</label><br><br>
-            <input type="textarea" v-model="recipe.categories" id="categories" v-on:blur="validate()"/> 
+            <input type="text" data-test="recipe-name-category" v-model="recipe.categories" id="categories" v-on:blur="validate()"/> 
             <small class="form-help">Min: 3</small>
             <error-field
                 v-if="errors && 'name' in errors"
@@ -42,7 +42,7 @@
         <br>
         </div>
         <!-- submit new recipe -->
-        <button @click="addRecipe">Add Recipe</button>
+        <button @click="addRecipe" data-test="add-recipe-button">Add Recipe</button>
             <transition name="fade">
             <div
                 data-test="recipe-added-confirmation"
@@ -87,7 +87,6 @@ export default {
                 name: 'required|between:3,100',
                 ingredients: 'required|min:3',
                 directions: 'required|min:3',
-                description: 'required|min:3',
                 categories: 'required|min:3',
             });
 
